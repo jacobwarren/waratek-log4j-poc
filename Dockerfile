@@ -13,7 +13,7 @@ RUN echo "deb [check-valid-until=no] http://archive.debian.org/debian jessie-bac
 RUN sed -i '/deb http:\/\/deb.debian.org\/debian jessie-updates main/d' /etc/apt/sources.list
 RUN apt-get -o Acquire::Check-Valid-Until=false update
 
-RUN apt-get update -o Acquire::Check-Valid-Until=false && apt-get -y install sudo zsh fonts-powerline git python3 && apt-get -y clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update -o Acquire::Check-Valid-Until=false && apt-get -y install sudo zsh vim fonts-powerline git python3 && apt-get -y clean && rm -rf /var/lib/apt/lists/*
 
 # set default shell to zsh
 RUN chsh -s $(which zsh)
@@ -27,17 +27,16 @@ ADD oh-my-zsh /root/.oh-my-zsh
 ADD zshrc /root/.zshrc
 
 # Add Waratek agent
-# RUN cd /usr/local/tomcat && ls -la
-# RUN ls -la
-ADD waratek /usr/local/tomcat/waratek
-# RUN ls -la /usr/local/tomcat
-# RUN ls -la /usr/local/tomcat/waratek
+# ADD waratek /usr/local/tomcat/waratek
 
 # add appropriate permissions to agent folder
-RUN chmod -R o+x /usr/local/tomcat/waratek/agent
+# RUN chmod -R o+x /usr/local/tomcat/waratek/agent
 
-# set Waratek javaagent options
-ENV JAVA_OPTS='-javaagent:"/usr/local/tomcat/waratek/agent/waratek.jar" -Dcom.waratek.WaratekProperties="/usr/local/tomcat/waratek/conf_1/waratek.properties"'
+# Set Waratek javaagent options
+# ENV JAVA_OPTS='-javaagent:"/usr/local/tomcat/waratek/agent/waratek.jar" -Dcom.waratek.WaratekProperties="/usr/local/tomcat/waratek/conf_1/waratek.properties"'
+
+# Turn off MsgNoLookup for log4j in version 2.10+
+# ENV JAVA_OPTS='-Dlog4j2.formatMsgNoLookups=true -javaagent:"/usr/local/tomcat/waratek/agent/waratek.jar" -Dcom.waratek.WaratekProperties="/usr/local/tomcat/waratek/conf_1/waratek.properties"'
 
 EXPOSE 80
 EXPOSE 8080
