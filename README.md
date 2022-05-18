@@ -13,9 +13,9 @@ Prep
 ----------------------------------------
 
 - Move the extracted archive for the Java SE Development Kit into the root of this repo
-- Upload the root of this repo with the extracted Java SE Development Kit into your attacker machine
+- Upload the root of this repo with the extracted Java SE Development Kit into your **attacker** machine
 - Ensure that `python3` is installed on your attacker machine (if not follow guide here: https://www.digitalocean.com/community/tutorials/how-to-install-python-3-and-set-up-a-programming-environment-on-an-ubuntu-20-04-server)
-- Upload the root of this repo without the extracted Java SE Development Kit into your target machine
+- Upload the root of this repo without the extracted Java SE Development Kit into your **target** machine
 
 Steps to Follow
 ----------------------------------------
