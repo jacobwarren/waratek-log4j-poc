@@ -55,8 +55,8 @@ Listening on 0.0.0.0:1389
 - Then run it with `$ python3 revsh.py` to establish a TTY
 - Now run `$ WHOAMI` to verify that you're indeed root.
 
-Testing the Security-as-Code agent
-----------------------------------------
+Testing the Waratek  Security-as-Code agent
+--------------------------------------------
 
 - Move the `waratek` folder to the root directory of this repo
 - In the `Dockerfile` uncomment out lines 30, 33, and 36.
