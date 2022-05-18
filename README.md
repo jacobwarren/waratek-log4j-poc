@@ -2,6 +2,8 @@
 A Proof-Of-Concept for the recently found CVE-2021-44228 vulnerability. <br><br>
 Kudos to kozmer for the POC. I just added some niceties for demoing purposes and added the Waratek agent.<br><br>
 
+[![Log4j: How To Exploit It And 3 Ways To Fix It](https://img.youtube.com/vi/OPwyBrezj64/0.jpg)](https://www.youtube.com/watch?v=OPwyBrezj64)
+
 Setup
 ----------------------------------------
 
